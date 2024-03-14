@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body onload="resetPiezas()">
+    <div>
+    <textarea name="partida" id="txaPartida" cols="30" rows="10"></textarea><br>
+    <input type="file" id="btnLeer" onchange="leerArchivo(this,'txaPartida')" value="Cargar Archivo"><br>
+    <button type="button" onclick="movimiento()">Siguiente movimiento</button><br>
+    <button type="button" id="completo">Reproducir partida completa</button><br>
+    <button type="button" onclick="resetPiezas()">Reiniciar</button><br>
+    <br>
+    <p>Movimiento: <strong id="movimiento"></strong></p>
+    </div>
+    <div>
+        <table class="tablero">
+            <tr>
+                <th class="style-less"></td>
+                <th class="style-less">a</td>
+                <th class="style-less">b</td>
+                <th class="style-less">c</td>
+                <th class="style-less">d</td>
+                <th class="style-less">e</td>
+                <th class="style-less">f</td>
+                <th class="style-less">g</td>
+                <th class="style-less">h</td>
+                <th class="style-less"></td>
+            </tr>
+            <tr>
+                <th class="style-less">8</td>
+                <td id="a*8" class="disoccupied"></td>
+                <td id="b*8" class="disoccupied"></td>
+                <td id="c*8" class="disoccupied"></td>
+                <td id="d*8" class="disoccupied"></td>
+                <td id="e*8" class="disoccupied"></td>
+                <td id="f*8" class="disoccupied"></td>
+                <td id="g*8" class="disoccupied"></td>
+                <td id="h*8" class="disoccupied"></td>
+                <th class="style-less">8</td>
+            </tr>
+            <tr>
+                <th class="style-less">7</td>
+                <td id="a*7" class="disoccupied"></td>
+                <td id="b*7" class="disoccupied"></td>
+                <td id="c*7" class="disoccupied"></td>
+                <td id="d*7" class="disoccupied"></td>
+                <td id="e*7" class="disoccupied"></td>
+                <td id="f*7" class="disoccupied"></td>
+                <td id="g*7" class="disoccupied"></td>
+                <td id="h*7" class="disoccupied"></td>
+                <th class="style-less">7</td>
+            </tr>
+            <tr>
+                <th class="style-less">6</td>
+                <td id="a*6" class="disoccupied"></td>
+                <td id="b*6" class="disoccupied"></td>
+                <td id="c*6" class="disoccupied"></td>
+                <td id="d*6" class="disoccupied"></td>
+                <td id="e*6" class="disoccupied"></td>
+                <td id="f*6" class="disoccupied"></td>
+                <td id="g*6" class="disoccupied"></td>
+                <td id="h*6" class="disoccupied"></td>
+                <th class="style-less">6</td>
+            </tr>
+            <tr>
+                <th class="style-less">5</td>
+                <td id="a*5" class="disoccupied"></td>
+                <td id="b*5" class="disoccupied"></td>
+                <td id="c*5" class="disoccupied"></td>
+                <td id="d*5" class="disoccupied"></td>
+                <td id="e*5" class="disoccupied"></td>
+                <td id="f*5" class="disoccupied"></td>
+                <td id="g*5" class="disoccupied"></td>
+                <td id="h*5" class="disoccupied"></td>
+                <th class="style-less">5</td>
+            </tr>
+            <tr>
+                <th class="style-less">4</td>
+                <td id="a*4" class="disoccupied"></td>
+                <td id="b*4" class="disoccupied"></td>
+                <td id="c*4" class="disoccupied"></td>
+                <td id="d*4" class="disoccupied"></td>
+                <td id="e*4" class="disoccupied"></td>
+                <td id="f*4" class="disoccupied"></td>
+                <td id="g*4" class="disoccupied"></td>
+                <td id="h*4" class="disoccupied"></td>
+                <th class="style-less">4</td>
+            </tr>
+            <tr>
+                <th class="style-less">3</td>
+                <td id="a*3" class="disoccupied"></td>
+                <td id="b*3" class="disoccupied"></td>
+                <td id="c*3" class="disoccupied"></td>
+                <td id="d*3" class="disoccupied"></td>
+                <td id="e*3" class="disoccupied"></td>
+                <td id="f*3" class="disoccupied"></td>
+                <td id="g*3" class="disoccupied"></td>
+                <td id="h*3" class="disoccupied"></td>
+                <th class="style-less">3</td>
+            </tr>
+            <tr>
+                <th class="style-less">2</td>
+                <td id="a*2" class="disoccupied"></td>
+                <td id="b*2" class="disoccupied"></td>
+                <td id="c*2" class="disoccupied"></td>
+                <td id="d*2" class="disoccupied"></td>
+                <td id="e*2" class="disoccupied"></td>
+                <td id="f*2" class="disoccupied"></td>
+                <td id="g*2" class="disoccupied"></td>
+                <td id="h*2" class="disoccupied"></td>
+                <th class="style-less">2</td>
+            </tr>
+            <tr>
+                <th class="style-less">1</td>
+                <td id="a*1" class="disoccupied"></td>
+                <td id="b*1" class="disoccupied"></td>
+                <td id="c*1" class="disoccupied"></td>
+                <td id="d*1" class="disoccupied"></td>
+                <td id="e*1" class="disoccupied"></td>
+                <td id="f*1" class="disoccupied"></td>
+                <td id="g*1" class="disoccupied"></td>
+                <td id="h*1" class="disoccupied"></td>
+                <th class="style-less">1</td>
+            </tr>
+            <tr>
+                <th class="style-less"></td>
+                <th class="style-less">a</td>
+                <th class="style-less">b</td>
+                <th class="style-less">c</td>
+                <th class="style-less">d</td>
+                <th class="style-less">e</td>
+                <th class="style-less">f</td>
+                <th class="style-less">g</td>
+                <th class="style-less">h</td>
+                <th class="style-less"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="js/pieza.js"></script>
+    <script src="js/vizualizador.js"></script>
+    <script>
+        // for (let index = 0; index < 90; index++) {
+            
+        //     invoke(index)
+            
+        // }
+        // function invoke(index){
+        //     setTimeout(()=>{
+        //         console.log(index);
+        //     },1000*index)
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+body{
+    padding: 0;
+    margin:0;
+    font-size: 1.05rem;
+}
+
+/***** tablero *****/
+[class*="peonB"]{
+    background-image: url("../img/PeonB.png");
+    background-size: cover;
+}
+[class*="torreB"]{
+    background-image: url("../img/TorreB.png");
+    background-size: cover;
+}
+[class*="alfilB"]{
+    background-image: url("../img/AlfilB.png");
+    background-size: cover;
+}
+[class*="caballoB"]{
+    background-image: url("../img/CaballoB.png");
+    background-size: cover;
+}
+[class*="reinaB"]{
+    background-image: url("../img/ReinaB.png");
+    background-size: cover;
+}
+[class*="reyB"]{
+    background-image: url("../img/ReyB.png");
+    background-size: cover;
+}
+
+[class*="peonN"]{
+    background-image: url("../img/PeonN.png");
+    background-size: cover;
+}
+[class*="torreN"]{
+    background-image: url("../img/TorreN.png");
+    background-size: cover;
+}
+[class*="alfilN"]{
+    background-image: url("../img/AlfilN.png");
+    background-size: cover;
+}
+[class*="caballoN"]{
+    background-image: url("../img/CaballoN.png");
+    background-size: cover;
+}
+[class*="reinaN"]{
+    background-image: url("../img/ReinaN.png");
+    background-size: cover;
+}
+[class*="reyN"]{
+    background-image: url("../img/ReyN.png");
+    background-size: cover;
+}
+
+table.tablero td{
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+    border-color: rgb(48, 48, 48);
+    background-color: #DAF0EE;
+}
+table.tablero {
+    padding:0;
+    background-color:rgb(48, 48, 48);
+    border: 1px solid;
+    border-color: rgb(48, 48, 48);
+}
+table.tablero tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even) {
+    background-color: #9DB5B2;
+}
+.occupied{
+    background-image: url("../img/notAQueen.png") !important;
+    background-size: cover;
+}
+table.tablero .style-less{
+    background: none;
+    border:0;
+    color:#FFFFFF;
+    width: 40px;
+    height: 40px;
+}
+ /***** End tablero *****/
+
+ /***** bg *****/ 
+.bg-1{
+    background-color: #191919;
+ }
+.bg-2{
+    background-color: #CED0CE;  
+}
+.bg-3{
+    background-color: #E6E8E6;
+}
+.bg-4{
+    background-color: #FFFFFF;
+}
+.bg-5{
+    background-color: #F15025;
+}
+ /***** End bg *****/
+ 
+
+/***** heights *****/ 
+.h-100px{
+    height:100px;
+}
+.h-97_5per{
+    height:97.5%;
+}
+/***** End heights *****/
+/***** width *****/ 
+.w-100px{
+    width: 100px;
+}
+.w-97_5per{
+    width:97.5%;
+}
+/***** End width *****/
+
+/***** grid *****/ 
+.container{
+    display:grid;
+    grid-gap:4px;
+    grid-template-rows: 200px auto;
+    grid-template-columns: 33% auto;
+    grid-template-areas: "header main"
+                         "sidebar main";
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.header{
+    grid-area: header;
+    border-bottom-right-radius: 15px;
+}
+.sidebar{
+    grid-area: sidebar;
+    border-top-right-radius: 15px;
+}
+.main{
+    grid-area: main;
+}
+/***** End grid *****/
+
+/***** margin *****/
+.m-auto{
+    margin: auto auto;
+}
+.vertical{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+}
+/***** End margin *****/
+
+/***** padding *****/
+.p-auto{
+    padding: auto 0;
+}
+.p-5px{
+    padding:5px;
+}
+/***** End padding *****/
+
+/***** btn *****/ 
+
+.btn{
+    border: none;
+    border-radius: 10px;
+    width: 10em;
+    height: 4em;
+    font-size: medium;
+    color:#FFFFFF;
+    background-color: #F15025;
+}
+.btn:hover{
+    background-color: #d6512d;
+}
+/***** End btn *****/
